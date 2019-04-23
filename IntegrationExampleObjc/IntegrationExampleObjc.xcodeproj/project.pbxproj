@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB9B3A3E220C716400B9A300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9B3A3D220C716400B9A300 /* AppDelegate.m */; };
+		CB9B3A41220C716400B9A300 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9B3A40220C716400B9A300 /* ViewController.m */; };
+		CB9B3A44220C716400B9A300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B3A42220C716400B9A300 /* Main.storyboard */; };
+		CB9B3A46220C716500B9A300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B3A45220C716500B9A300 /* Assets.xcassets */; };
+		CB9B3A49220C716500B9A300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B3A47220C716500B9A300 /* LaunchScreen.storyboard */; };
+		CB9B3A4C220C716500B9A300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9B3A4B220C716500B9A300 /* main.m */; };
+		CB9B3A53220C719A00B9A300 /* ecommpaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9B3A52220C719A00B9A300 /* ecommpaySDK.framework */; };
+		CB9B3A54220C719A00B9A300 /* ecommpaySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB9B3A52220C719A00B9A300 /* ecommpaySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB9B3A59220C73A700B9A300 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B3A57220C73A700B9A300 /* Utils.swift */; };
+		CB9B3A5A220C73A700B9A300 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B3A58220C73A700B9A300 /* String+Additions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB9B3A55220C719B00B9A300 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB9B3A54220C719A00B9A300 /* ecommpaySDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CB9B3A39220C716400B9A300 /* IntegrationExampleObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegrationExampleObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9B3A3C220C716400B9A300 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CB9B3A3D220C716400B9A300 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CB9B3A3F220C716400B9A300 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CB9B3A40220C716400B9A300 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CB9B3A43220C716400B9A300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB9B3A45220C716500B9A300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB9B3A48220C716500B9A300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB9B3A4A220C716500B9A300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB9B3A4B220C716500B9A300 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB9B3A52220C719A00B9A300 /* ecommpaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ecommpaySDK.framework; path = IntegrationExampleObjc/ecommpaySDK.framework; sourceTree = "<group>"; };
+		CB9B3A56220C73A600B9A300 /* IntegrationExampleObjc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntegrationExampleObjc-Bridging-Header.h"; sourceTree = "<group>"; };
+		CB9B3A57220C73A700B9A300 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CB9B3A58220C73A700B9A300 /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB9B3A36220C716400B9A300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9B3A53220C719A00B9A300 /* ecommpaySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB9B3A30220C716400B9A300 = {
+			isa = PBXGroup;
+			children = (
+				CB9B3A52220C719A00B9A300 /* ecommpaySDK.framework */,
+				CB9B3A3B220C716400B9A300 /* IntegrationExampleObjc */,
+				CB9B3A3A220C716400B9A300 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB9B3A3A220C716400B9A300 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB9B3A39220C716400B9A300 /* IntegrationExampleObjc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB9B3A3B220C716400B9A300 /* IntegrationExampleObjc */ = {
+			isa = PBXGroup;
+			children = (
+				CB9B3A5B220C73AE00B9A300 /* Utils */,
+				CB9B3A3C220C716400B9A300 /* AppDelegate.h */,
+				CB9B3A3D220C716400B9A300 /* AppDelegate.m */,
+				CB9B3A3F220C716400B9A300 /* ViewController.h */,
+				CB9B3A40220C716400B9A300 /* ViewController.m */,
+				CB9B3A42220C716400B9A300 /* Main.storyboard */,
+				CB9B3A45220C716500B9A300 /* Assets.xcassets */,
+				CB9B3A47220C716500B9A300 /* LaunchScreen.storyboard */,
+				CB9B3A4A220C716500B9A300 /* Info.plist */,
+				CB9B3A4B220C716500B9A300 /* main.m */,
+				CB9B3A56220C73A600B9A300 /* IntegrationExampleObjc-Bridging-Header.h */,
+			);
+			path = IntegrationExampleObjc;
+			sourceTree = "<group>";
+		};
+		CB9B3A5B220C73AE00B9A300 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CB9B3A58220C73A700B9A300 /* String+Additions.swift */,
+				CB9B3A57220C73A700B9A300 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB9B3A38220C716400B9A300 /* IntegrationExampleObjc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB9B3A4F220C716500B9A300 /* Build configuration list for PBXNativeTarget "IntegrationExampleObjc" */;
+			buildPhases = (
+				CB9B3A35220C716400B9A300 /* Sources */,
+				CB9B3A36220C716400B9A300 /* Frameworks */,
+				CB9B3A37220C716400B9A300 /* Resources */,
+				CB9B3A55220C719B00B9A300 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntegrationExampleObjc;
+			productName = IntegrationExampleObjc;
+			productReference = CB9B3A39220C716400B9A300 /* IntegrationExampleObjc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB9B3A31220C716400B9A300 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Ecommpay;
+				TargetAttributes = {
+					CB9B3A38220C716400B9A300 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = CB9B3A34220C716400B9A300 /* Build configuration list for PBXProject "IntegrationExampleObjc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB9B3A30220C716400B9A300;
+			productRefGroup = CB9B3A3A220C716400B9A300 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB9B3A38220C716400B9A300 /* IntegrationExampleObjc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB9B3A37220C716400B9A300 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9B3A49220C716500B9A300 /* LaunchScreen.storyboard in Resources */,
+				CB9B3A46220C716500B9A300 /* Assets.xcassets in Resources */,
+				CB9B3A44220C716400B9A300 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB9B3A35220C716400B9A300 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9B3A41220C716400B9A300 /* ViewController.m in Sources */,
+				CB9B3A5A220C73A700B9A300 /* String+Additions.swift in Sources */,
+				CB9B3A4C220C716500B9A300 /* main.m in Sources */,
+				CB9B3A3E220C716400B9A300 /* AppDelegate.m in Sources */,
+				CB9B3A59220C73A700B9A300 /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CB9B3A42220C716400B9A300 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB9B3A43220C716400B9A300 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB9B3A47220C716500B9A300 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB9B3A48220C716500B9A300 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB9B3A4D220C716500B9A300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB9B3A4E220C716500B9A300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB9B3A50220C716500B9A300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IntegrationExampleObjc",
+				);
+				INFOPLIST_FILE = IntegrationExampleObjc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ecommpay.com.IntegrationExampleObjc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IntegrationExampleObjc/IntegrationExampleObjc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB9B3A51220C716500B9A300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IntegrationExampleObjc",
+				);
+				INFOPLIST_FILE = IntegrationExampleObjc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ecommpay.com.IntegrationExampleObjc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IntegrationExampleObjc/IntegrationExampleObjc-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB9B3A34220C716400B9A300 /* Build configuration list for PBXProject "IntegrationExampleObjc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9B3A4D220C716500B9A300 /* Debug */,
+				CB9B3A4E220C716500B9A300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB9B3A4F220C716500B9A300 /* Build configuration list for PBXNativeTarget "IntegrationExampleObjc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9B3A50220C716500B9A300 /* Debug */,
+				CB9B3A51220C716500B9A300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB9B3A31220C716400B9A300 /* Project object */;
+}

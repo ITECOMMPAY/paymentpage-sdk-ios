@@ -35,9 +35,14 @@
     // Sign payment info
     [paymentInfo setSignature:signature];
     
-    // Present Checkout UI
-    [self.ecommpaySDK presentPaymentAt:self paymentInfo:paymentInfo completionHandler:^(ECPPaymentStatus paymentStatus, NSError * error) {
-        NSLog(@"ecommpaySDK finisehd with status %ld", (long)paymentStatus);
+    [self.ecommpaySDK presentPaymentAt:self paymentInfo:paymentInfo completionHandler:^(ECPPaymentResult *result) {
+        NSLog(@"ecommpaySDK finisehd with status %ld", (long)result.status);
+        if(result.error != NULL) { // if error occurred
+            NSLog(@"Error: %@", result.error.localizedDescription);
+        }
+        if(result.token != NULL) { // if tokenize action
+            NSLog(@"Token: %@", result.token);
+        }
     }];
 }
 
@@ -69,7 +74,15 @@
 #pragma mark - Additionals
 
 - (void)setDMSPayment:(PaymentInfo *)paymentInfo {
-    [paymentInfo setCreditCardPaymentType:CreditCardPaymentTypeAuth];
+    [paymentInfo setAction:ActionTypeAuth];
+}
+
+- (void)setActionTokenize:(PaymentInfo *)paymentInfo {
+    [paymentInfo setAction:ActionTypeTokenize];
+}
+
+- (void)setActionVerify:(PaymentInfo *)paymentInfo {
+    [paymentInfo setAction:ActionTypeVerify];
 }
 
 - (void)setToken:(PaymentInfo *)paymentInfo {
@@ -78,14 +91,34 @@
 
 - (void)setRecurrent:(PaymentInfo *)paymentInfo {
     RecurrentInfo *recurrentInfo = [[RecurrentInfo alloc] initWithRecurrentType:RecurrentTypeAutopayment
+                                                                      expiryDay:@"20"
                                                                     expiryMonth:@"11"
                                                                      expiryYear:@"2030"
                                                                          period:RecurrentPeriodMonth
                                                                            time:@"12:00:00"
                                                                       startDate:@"12-02-2020"
                                                              scheduledPaymentID:@"your_recurrent_id"];
+    // Additional options if needed
+//    [recurrentInfo setAmount:1000];
+//    [recurrentInfo setSchedule:@[[[RecurrentInfoSchedule alloc] initWithDate:@"10-10-2020" amount:1200],
+//                                 [[RecurrentInfoSchedule alloc] initWithDate:@"10-11-2020" amount:1000]]];
     
     [paymentInfo setRecurret:recurrentInfo];
+}
+
+- (void)setKnownAdditionalFields:(PaymentInfo *)paymentInfo {
+    [paymentInfo setAdditionalFields:@[[[AdditionalField alloc] initWithType:customer_first_name value:@"Mark"],
+                                       [[AdditionalField alloc] initWithType:billing_country value:@"US"]]];
+}
+
+#pragma mark - Theme
+
+- (void)setDarkTheme {
+    ECPTheme *theme = [ECPTheme getDarkTheme];
+    // Additional changes if needed
+//    theme.backgroundColor = UIColor.greenColor;
+//    theme.showDarkKeyboard = true;
+    [self.ecommpaySDK setTheme:theme];
 }
 
 @end

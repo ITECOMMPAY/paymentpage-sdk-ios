@@ -28,9 +28,14 @@ class ViewController: UIViewController {
         // Sign payment info
         paymentInfo.setSignature(value: signature)
         
-        // Present Checkout UI
-        ecompaySDK.presentPayment(at: self, paymentInfo: paymentInfo) { (paymentStatus, error) in
-            print("ecommpaySDK finisehd with status \(paymentStatus.rawValue)")
+        ecompaySDK.presentPayment(at: self, paymentInfo: paymentInfo) { (result) in
+            print("ecommpaySDK finisehd with status \(result.status.rawValue)")
+            if let error = result.error { // if error occurred
+                print("Error: \(error.localizedDescription)")
+            }
+            if let token = result.token { // if tokenize action
+                print("Token: \(token)")
+            }
         }
     }
     
@@ -59,7 +64,15 @@ class ViewController: UIViewController {
     
     //MARK: - Additionals
     func setDMSPayment(paymentInfo:PaymentInfo) {
-        paymentInfo.setCreditCardPaymentType(creditCardPaymentType: .Auth)
+        paymentInfo.setAction(action: .Auth)
+    }
+    
+    func setActionTokenize(paymentInfo:PaymentInfo) {
+        paymentInfo.setAction(action: .Tokenize)
+    }
+    
+    func setActionVerify(paymentInfo:PaymentInfo) {
+        paymentInfo.setAction(action: .Verify)
     }
     
     func setToken(paymentInfo:PaymentInfo) {
@@ -68,14 +81,37 @@ class ViewController: UIViewController {
     
     func setRecurrent(paymentInfo:PaymentInfo) {
         let recurrentInfo = RecurrentInfo(type: .Autopayment,
+                                          expiryDay: "20",
                                           expiryMonth: "10",
                                           expiryYear: "2030",
                                           period: .Month,
                                           time: "12:00:00",
                                           startDate: "12-02-2020",
                                           scheduledPaymentID: "your_recurrent_id")
+        // Additional options if needed
+//        recurrentInfo.setAmount(amount: 1000)
+//        recurrentInfo.setSchedule(schedule: [
+//            RecurrentInfoSchedule(date: "10-10-2020", amount: 1200),
+//            RecurrentInfoSchedule(date: "10-11-2020", amount: 1000),
+//            ])
         
         paymentInfo.setRecurrent(recurrent: recurrentInfo)
+    }
+    
+    func setKnownAdditionalFields(paymentInfo:PaymentInfo) {
+        paymentInfo.setAdditionalFields(additionalFields: [
+            AdditionalField(type: .customer_first_name, value: "Mark"),
+            AdditionalField(type: .billing_country, value: "US")
+            ])
+    }
+    
+    //MARK: - Additionals
+    func setDarkTheme() {
+        let theme = ECPTheme.getDarkTheme()
+        // Additional changes if needed
+//        theme.backgroundColor = UIColor.green
+//        theme.showDarkKeyboard = true
+        ecompaySDK.setTheme(theme: theme)
     }
 }
 

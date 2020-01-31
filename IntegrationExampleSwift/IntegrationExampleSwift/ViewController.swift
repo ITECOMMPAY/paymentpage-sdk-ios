@@ -79,6 +79,10 @@ class ViewController: UIViewController {
         paymentInfo.setToken(value: "token")
     }
     
+    func setReceiptData(paymentInfo:PaymentInfo) {
+        paymentInfo.setReceiptData(value: "receipt data")
+    }
+    
     func setRecurrent(paymentInfo:PaymentInfo) {
         let recurrentInfo = RecurrentInfo(type: .Autopayment,
                                           expiryDay: "20",

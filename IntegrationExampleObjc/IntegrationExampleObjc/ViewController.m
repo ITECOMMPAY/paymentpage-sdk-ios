@@ -89,6 +89,10 @@
     [paymentInfo setToken:@"token"];
 }
 
+- (void)setReceiptData:(PaymentInfo *)paymentInfo {
+    [paymentInfo setReceiptData:@"receipt data"];
+}
+
 - (void)setRecurrent:(PaymentInfo *)paymentInfo {
     RecurrentInfo *recurrentInfo = [[RecurrentInfo alloc] initWithRecurrentType:RecurrentTypeAutopayment
                                                                       expiryDay:@"20"

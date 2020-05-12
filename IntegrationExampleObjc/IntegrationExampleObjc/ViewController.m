@@ -81,6 +81,10 @@
     [paymentInfo setAction:ActionTypeTokenize];
 }
 
+- (void)setApplePayMerchantID:(PaymentInfo *)paymentInfo {
+    [paymentInfo setApplePayMerchantID:@"merchant.example.com"];
+}
+
 - (void)setActionVerify:(PaymentInfo *)paymentInfo {
     [paymentInfo setAction:ActionTypeVerify];
 }

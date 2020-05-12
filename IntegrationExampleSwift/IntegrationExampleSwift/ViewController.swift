@@ -67,6 +67,10 @@ class ViewController: UIViewController {
         paymentInfo.setAction(action: .Auth)
     }
     
+    func setApplePayMerchantID(paymentInfo:PaymentInfo) {
+        paymentInfo.setApplePayMerchantID(merchantID: "merchant.example.com")
+    }
+    
     func setActionTokenize(paymentInfo:PaymentInfo) {
         paymentInfo.setAction(action: .Tokenize)
     }

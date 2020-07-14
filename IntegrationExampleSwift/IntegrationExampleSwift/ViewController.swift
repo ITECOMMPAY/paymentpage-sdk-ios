@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         paymentInfo.setSignature(value: signature)
         
         ecompaySDK.presentPayment(at: self, paymentInfo: paymentInfo) { (result) in
-            print("ecommpaySDK finisehd with status \(result.status.rawValue)")
+            print("ecommpaySDK finished with status \(result.status.rawValue)")
             if let error = result.error { // if error occurred
                 print("Error: \(error.localizedDescription)")
             }
@@ -85,6 +85,16 @@ class ViewController: UIViewController {
     
     func setReceiptData(paymentInfo:PaymentInfo) {
         paymentInfo.setReceiptData(value: "receipt data")
+    }
+    
+    // For forced opening of the payment method, pass its code. Example: qiwi, card ...
+    func setForcePaymentMethod() {
+        paymentInfo.setForcePaymentMethod(value: "card")
+    }
+    
+    // if you want to hide the saved cards, pass the value - true
+    func setHideSavedWallets() {
+        paymentInfo.setHideSavedWallets(value: false)
     }
     
     func setRecurrent(paymentInfo:PaymentInfo) {

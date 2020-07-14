@@ -36,7 +36,7 @@
     [paymentInfo setSignature:signature];
     
     [self.ecommpaySDK presentPaymentAt:self paymentInfo:paymentInfo completionHandler:^(ECPPaymentResult *result) {
-        NSLog(@"ecommpaySDK finisehd with status %ld", (long)result.status);
+        NSLog(@"ecommpaySDK finished with status %ld", (long)result.status);
         if(result.error != NULL) { // if error occurred
             NSLog(@"Error: %@", result.error.localizedDescription);
         }
@@ -95,6 +95,16 @@
 
 - (void)setReceiptData:(PaymentInfo *)paymentInfo {
     [paymentInfo setReceiptData:@"receipt data"];
+}
+
+// if you want to hide the saved cards, pass the value - YES
+- (void)setHideSavedWallets:(PaymentInfo *)paymentInfo {
+    [paymentInfo setHideSavedWallets:NO];
+}
+
+// For forced opening of the payment method, pass its code. Example: qiwi, card ...
+- (void)setForcePaymentMethod:(PaymentInfo *)paymentInfo {
+    [paymentInfo setForcePaymentMethod:@"card"];
 }
 
 - (void)setRecurrent:(PaymentInfo *)paymentInfo {

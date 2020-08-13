@@ -87,13 +87,17 @@ class ViewController: UIViewController {
         paymentInfo.setReceiptData(value: "receipt data")
     }
     
+    func setApplePayDescription(paymentInfo: PaymentInfo) {
+        paymentInfo.setApplePayDescription(description: "Shop")
+    }
+    
     // For forced opening of the payment method, pass its code. Example: qiwi, card ...
-    func setForcePaymentMethod() {
+    func setForcePaymentMethod(paymentInfo: PaymentInfo) {
         paymentInfo.setForcePaymentMethod(value: "card")
     }
     
     // if you want to hide the saved cards, pass the value - true
-    func setHideSavedWallets() {
+    func setHideSavedWallets(paymentInfo: PaymentInfo) {
         paymentInfo.setHideSavedWallets(value: false)
     }
     

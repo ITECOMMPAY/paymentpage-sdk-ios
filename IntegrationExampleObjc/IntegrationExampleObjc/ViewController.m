@@ -107,6 +107,10 @@
     [paymentInfo setForcePaymentMethod:@"card"];
 }
 
+- (void)setApplePayDescription:(PaymentInfo *)paymentInfo {
+    [paymentInfo setApplePayDescription:@"Shop"];
+}
+
 - (void)setRecurrent:(PaymentInfo *)paymentInfo {
     RecurrentInfo *recurrentInfo = [[RecurrentInfo alloc] initWithRecurrentType:RecurrentTypeAutopayment
                                                                       expiryDay:@"20"

@@ -32,6 +32,7 @@ class ViewController: UIViewController {
             print("ecommpaySDK finished with status \(result.status.rawValue)")
             if let error = result.error { // if error occurred
                 print("Error: \(error.localizedDescription)")
+                ViewController.handleErrorCode(from: error)
             }
             if let token = result.token { // if tokenize action
                 print("Token: \(token)")
@@ -208,5 +209,25 @@ class ViewController: UIViewController {
         threeDSecureInfo.threeDSecureCustomerInfo = threeDSecureCustomerInfo
         paymentInfo.setSecureInfo(secureInfo: threeDSecureInfo)
     }
-}
 
+    //MARK: - Advanced error codes handling
+    static func handleErrorCode(from error: Error) {
+        if let codeNumber = (error as NSError).userInfo[EcommpaySDK.kSDKInitErrorCodeKey] as? NSNumber,
+           let code = SDKInitErrorCode.init(rawValue: codeNumber.intValue) {
+            switch code {
+            case .ServerError:
+                print("ServerError code received")
+            case .NoSupportedPaymentMethodsOrInvalidParams:
+                print("NoSupportedPaymentMethodsOrInvalidParams code received")
+            case .CustomerIDRequired:
+                print("CustomerIDRequired code received")
+            case .PaymentIDRequired:
+                print("PaymentIDRequired code received")
+            case .PaymentInfoSerializationFailed:
+                print("PaymentInfoSerializationFailed code received")
+            case .SavedAccountsForTokenNotFound:
+                print("SavedAccountsForTokenNotFound code received")
+            }
+        }
+    }
+}

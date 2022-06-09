@@ -27,7 +27,7 @@
     self.ecommpaySDK = [[EcommpaySDK alloc] init];
     
     // Create payment info with product information
-    PaymentInfo *paymentInfo = [self getPaymentInfoOnlyRequiredParams]; //getPaymentInfoAllParams
+    PaymentInfo *paymentInfo = [self getPaymentInfoAllParams];
     
     #warning("Signature should be generated on your server and delivered to your app")
     NSString *signature = [self getSignature:paymentInfo.getParamsForSignature];
@@ -39,6 +39,7 @@
         NSLog(@"ecommpaySDK finished with status %ld", (long)result.status);
         if(result.error != NULL) { // if error occurred
             NSLog(@"Error: %@", result.error.localizedDescription);
+            [ViewController handleErrorCodeFrom: result.error];
         }
         if(result.token != NULL) { // if tokenize action
             NSLog(@"Token: %@", result.token);
@@ -215,6 +216,34 @@
     threeDSecureInfo.threeDSecureCustomerInfo = threeDSecureCustomerInfo;
      
     [paymentInfo setSecureInfo: threeDSecureInfo];
+}
+
+//MARK: - Advanced error codes handling
++ (void)handleErrorCodeFrom:(NSError *)error
+{
+    NSNumber *code = [[error userInfo] objectForKey:EcommpaySDK.kSDKInitErrorCodeKey];
+    if (code != nil) {
+        switch (code.integerValue) {
+            case SDKInitErrorCodeServerError:
+                NSLog(@"ServerError code received");
+                break;
+            case SDKInitErrorCodeNoSupportedPaymentMethodsOrInvalidParams:
+                NSLog(@"NoSupportedPaymentMethodsOrInvalidParams code received");
+                break;
+            case SDKInitErrorCodeCustomerIDRequired:
+                NSLog(@"CustomerIDRequired code received");
+                break;
+            case SDKInitErrorCodePaymentIDRequired:
+                NSLog(@"PaymentIDRequired code received");
+                break;
+            case SDKInitErrorCodePaymentInfoSerializationFailed:
+                NSLog(@"PaymentInfoSerializationFailed code received");
+                break;
+            case SDKInitErrorCodeSavedAccountsForTokenNotFound:
+                NSLog(@"SavedAccountsForTokenNotFound code received");
+                break;
+        }
+    }
 }
 
 @end

@@ -134,6 +134,11 @@
                                        [[AdditionalField alloc] initWithType:billing_country value:@"US"]]];
 }
 
+- (void)hideFinalPages:(PaymentInfo *)paymentInfo {
+    [paymentInfo addScreenDisplayModeString:@"hide_decline_final_page"];
+    [paymentInfo addScreenDisplayModeString:@"hide_success_final_page"];
+}
+
 #pragma mark - Theme
 
 - (void)setDarkTheme {
@@ -241,6 +246,18 @@
                 break;
             case SDKInitErrorCodeSavedAccountsForTokenNotFound:
                 NSLog(@"SavedAccountsForTokenNotFound code received");
+                break;
+            case SDKInitErrorCodeProjectIDRequired:
+                NSLog(@"Project ID Required");
+                break;
+            case SDKInitErrorCodeInvalidSignature:
+                NSLog(@"Invalid Signature");
+                break;
+            case SDKInitErrorCodeSavedCardForTokenNotFound:
+                NSLog(@"Saved Card For Token Not Found");
+                break;
+            case SDKInitErrorCodeForcePaymentMethodIsInvalid:
+                NSLog(@"Force Payment Method Is Invalid");
                 break;
         }
     }

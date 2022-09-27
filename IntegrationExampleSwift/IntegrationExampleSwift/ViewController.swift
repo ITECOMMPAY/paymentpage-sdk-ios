@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
         // Create payment info with product information
         let paymentInfo = getPaymentInfoAllParams() // getPaymentInfoOnlyRequiredParams
-        
+
         #warning("Signature should be generated on your server and delivered to your app")
         let signature = getSignature(stringToSign: paymentInfo.getParamsForSignature())
         
@@ -120,7 +120,12 @@ class ViewController: UIViewController {
         
         paymentInfo.setRecurrent(recurrent: recurrentInfo)
     }
-    
+
+    /// You can hide final screen build in SDK and handle final status in your app by adding ECMPScreenDisplayMode into screenDisplayModes
+    func hideFinalPages(paymentInfo:PaymentInfo) {
+        paymentInfo.screenDisplayModes = [ .hide_decline_final_page, .hide_decline_final_page ]
+    }
+
     func setKnownAdditionalFields(paymentInfo:PaymentInfo) {
         paymentInfo.setAdditionalFields(additionalFields: [
             AdditionalField(type: .customer_first_name, value: "Mark"),
@@ -227,6 +232,14 @@ class ViewController: UIViewController {
                 print("PaymentInfoSerializationFailed code received")
             case .SavedAccountsForTokenNotFound:
                 print("SavedAccountsForTokenNotFound code received")
+            case .ProjectIDRequired:
+                print("Project ID Required")
+            case . InvalidSignature:
+                print("Invalid Signature")
+            case . SavedCardForTokenNotFound:
+                print("Saved Card For Token Not Found")
+            case . ForcePaymentMethodIsInvalid:
+                print("Force Payment Method Is Invalid")
             }
         }
     }

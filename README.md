@@ -78,7 +78,7 @@ Listed below are the instructions on how to import the libraries via CocoaPods.
     
         target 'App' do
           # Pods for App
-          pod 'ECommPayHosts-sdk-ios', '1.14.1'
+          pod 'ECommPayHosts-sdk-ios'
         end
     
 2.  Add key NSCameraUsageDescription with value `permission is needed in order to scan card` to the Info.plist file.

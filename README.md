@@ -1,3 +1,6 @@
+[![CocoaPods](https://img.shields.io/cocoapods/v/Paymentpage-sdk-ios.svg)](https://github.com/ITECOMMPAY/paymentpage-sdk-ios)
+[![Badge w/ Platform](https://img.shields.io/cocoapods/p/Paymentpage-sdk-ios.svg?style=flat)](https://github.com/ITECOMMPAY/paymentpage-sdk-ios)
+
 ECommPay SDK for iOS
 ===========
 
@@ -78,7 +81,7 @@ Listed below are the instructions on how to import the libraries via CocoaPods.
     
         target 'App' do
           # Pods for App
-          pod 'ECommPayHosts-sdk-ios', '1.14.1'
+          pod 'Paymentpage-sdk-ios'
         end
     
 2.  Add key NSCameraUsageDescription with value `permission is needed in order to scan card` to the Info.plist file.

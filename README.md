@@ -139,6 +139,7 @@ To open payment form, do the following:
     *   hideSavedWallets—hiding or displaying saved payment instruments in the payment form. Possible values:
         *   `true`—saved payment instruments are hidden, they are not displayed in the payment form
         *   `false`—saved payment instruments are displayed in the payment form
+    *   hideScanningCards - hiding or displaying button to start card scanning flow
     *   ECommPayHostsScreenDisplayMode—object to manage display of the final page of the payment form and hide the final page if necessary. The following parameters can be passed in the object:
         
         *   `hide_success_final_page`—the final page with the message about the performed payment is not displayed in the payment form.
@@ -217,6 +218,7 @@ To open payment form, do the following:
     *   hideSavedWallets—hiding or displaying saved payment instruments in the payment form. Possible values:
         *   `true`—saved payment instruments are hidden, they are not displayed in the payment form.
         *   `false`—saved payment instruments are displayed in the payment form.
+    *   hideScanningCards - hiding or displaying button to start card scanning flow
     *   ECommPayHostsScreenDisplayMode — object to manage display of the final page of the payment form and hide the final page if necessary. The following parameters can be passed in the object:
         
         *   `hide_success_final_page`—the final page with the message about the performed payment is not displayed in the payment form.
